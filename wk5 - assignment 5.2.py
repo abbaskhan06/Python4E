@@ -6,27 +6,23 @@ Enter the numbers from the book for problem 5.1 and Match the desired output as 
 
 largest = None
 smallest = None
+
 while True:
-        num = raw_input("Enter a number: ")
-if num == "done" : break
+    num = input("Enter a number: ")
+    if num == "done":
+        break
 
-
-try:
+    try:
         num = int(num)
-except:
+    except:
         print("Invalid input")
-continue
+        continue
 
-if largest is None:
-        largest = num
-elif largest < num:
+    if largest is None or num > largest:
         largest = num
 
-if smallest is None:
+    if smallest is None or num < smallest:
         smallest = num
-elif smallest > num:
-        smallest = num
-
 
 print("Maximum is", largest)
 print("Minimum is", smallest)
